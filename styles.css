@@ -1,0 +1,311 @@
+ * {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #0a0a13;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    scroll-behavior: smooth;
+    flex-direction: column;
+    background: url('c0ode.png') no-repeat left; 
+            background-size: 600px 800px; 
+            background-color: #000000; 
+        }
+    
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('code.png'), url('me_motivated.jpg');
+    background-position: left top, right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 25% auto, 30% auto; 
+    z-index: -1;
+    }
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+} 
+.follower {
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    z-index: 9999; 
+}
+
+.center-text {
+    text-align: center;
+}
+h2 {
+    font-size: 1.5em;
+}
+
+h2 {
+    color: #2ab573; 
+}
+
+h3 {
+    color: #2ab573; 
+}
+
+p {
+    font-size: 0.95em;
+    line-height: 1.5; 
+}
+h4{
+    color:#000;
+}
+
+.floating-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #2ab573;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@keyframes moveX {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.section {
+    height: 100vh; /* Висота секції на весь екран */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.toggle-button {
+    padding: 10px 20px;
+    background-color: #2ab573;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+.toggle-button:hover {
+    background-color: #228a4b;
+}
+.text-content {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    display: none; /* Спочатку текст прихований */
+}
+.lines {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+    gap: 10px;
+}
+
+.line {
+    width: 5px; /* Ширина лінії */
+    background-color: #2ab573; /* Зелений колір */
+    border-radius: 10px; /* Закруглення */
+}
+
+.content {
+    flex: 1; /* Займає основний простір між лініями */
+    padding: 20px;
+    text-align: center;
+}
+.scroll-button {
+    padding: 10px 20px;
+    background-color: #2ab573; /* Зелений колір */
+    color: white; /* Текст білий */
+    font-size: 16px;
+    border: none; /* Без обводки */
+    border-radius: 10px; /* Закруглені кути */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scroll-button:hover {
+    background-color: #228a4b; /* Темніший зелений при наведенні */
+    transform: scale(1.05); /* Легке збільшення */
+}
+
+.scroll-button:active {
+    background-color: #1e6e3d; /* Темно-зелений при натисканні */
+    transform: scale(0.95); /* Зменшення при кліку */
+}
+.diagonal-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    pointer-events: none;
+}
+
+.diagonal-lines::before,
+.diagonal-lines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 40px,
+        #2ab573 40px,
+        #2ab573 45px
+    );
+}
+
+.diagonal-lines::before {
+    transform: translateX(-50%);
+}
+
+.diagonal-lines::after {
+    transform: translateX(50%);
+}
+
+.footer {
+    background-color: #000; 
+    color: #fff; 
+    padding: 20px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; 
+    border-top: 2px solid #2ab573; 
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-nav a {
+    color: #2ab573; /* Колір посилань */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #228a4b; /* Колір при наведенні */
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center; /* Центрує весь контейнер по горизонталі */
+    align-items: center;    /* Центрує по вертикалі */
+    gap: 20px;              /* Відступ між текстом і картинкою */
+    height: 100vh;          /* Висота контейнера (наприклад, вся висота екрану) */
+}
+
+.text {
+    text-align: left;       /* Вирівнює текст по лівому краю */
+}
+
+.image img {
+    max-width: 100%;        /* Забезпечує адаптивність зображення */
+    height: auto;           /* Зберігає пропорції зображення */
+}
+#toggle-content {
+    transition: all 0.3s ease-in-out;
+}
+.button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px 20px;
+    background-color: #2ab573;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #228a4b;
+}
+#shadowedText3{display:none;}
+#shadowedText4{display:none;}
+
+.textRight {
+    text-align: right;       /* Вирівнює текст по лівому краю */
+}
+button {
+    background-color: #2ab573; /* Зелений фон */
+    color: #fff; /* Білий текст */
+    border: none; /* Без рамок */
+    border-radius: 5px; /* Закруглені кути */
+    padding: 10px 20px; /* Відступи всередині кнопки */
+    font-size: 16px; /* Розмір тексту */
+    cursor: pointer; /* Вказівник миші */
+    transition: background-color 0.3s ease; /* Анімація зміни кольору */
+    font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+    background-color: #248a60; /* Темніший зелений при наведенні */
+}
+
+button:active {
+    background-color: #1e704f; /* Ще темніший зелений при натисканні */
+}
+.side {
+    position: absolute;
+    top: 0;
+    width: 20%; 
+    height: 100%;
+    background-image: url('last_code.png');
+    background-size: cover; /* Масштаб GIF */
+    background-repeat:repeat; 
+    background-position: center;
+}
+.side.left {
+    left: 0;
+}
+.side.right {
+    right: 0;
+}
